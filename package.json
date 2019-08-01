@@ -1,0 +1,29 @@
+{
+  "name": "unit_-2-project",
+  "engines": {
+    "node": "12.4.0"
+  },
+  "version": "1.0.0",
+  "description": "Code Along with Students for Heroku Deployment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majormase/Unit_-2-Project.git"
+  },
+  "author": "M. Griffin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/majormase/Unit_-2-Project/issues"
+  },
+  "homepage": "https://github.com/majormase/Unit_-2-Project#readme",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.6.7"
+  }
+}
