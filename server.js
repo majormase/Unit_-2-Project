@@ -8,6 +8,7 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
+const Thing = require('./models/things.js');
 //___________________
 //Port
 //___________________
@@ -50,10 +51,69 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 //___________________
 // Routes
-//___________________
-//localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
+
+//NEW ROUTE
+app.get('/things/new', (req, res)=>{
+    res.render('new.ejs');
+});
+
+//SHOW
+app.get('/things/:id', (req, res)=>{
+    Thing.findById(req.params.id, (err, foundThing)=>{
+        res.render('show.ejs', {
+            thing:foundThing
+        });
+    });
+});
+
+app.post('/things/', (req, res)=>{
+  Thing.create(req.body, (error, createdThing)=>{
+     res.redirect('/things');
+  });
+});
+
+//INDEX
+app.get('/things', (req, res)=>{
+    Thing.find({}, (error, allThing)=>{
+        res.render('index.ejs', {
+            thing: allThing//this must be inside the brackets for it to be called
+        });
+    });
+});
+
+//EDIT
+app.get('/things/:id/edit', (req, res)=>{
+    Thing.findById(req.params.id, (err, foundThing)=>{ //find the bean
+        res.render(
+    		'edit.ejs',
+    		{
+    			thing: foundThing //pass in found bean
+    		}
+    	);
+    });
+});
+
+app.put('/things/:id', (req, res)=>{
+    Thing.findByIdAndUpdate(req.params.id, req.body, {new:true}, (err, updatedModel)=>{
+        res.redirect('/things');
+    });
+});
+
+//DELETE
+app.delete('/things/:id', (req, res)=>{
+  Thing.findByIdAndRemove(req.params.id, (err, found)=>{
+      res.redirect('/things');//redirect back to beans index
+  });
+});
+
+///BUY
+
+app.put('/things/:id/like', (req, res)=>{
+    Thing.findByIdAndUpdate(req.params.id, req.like, {new:true}, (err, updatedThing)=>{
+        updatedThing.like += 1;
+        updatedThing.save();
+        res.redirect('/things/' + req.params.id);
+    });
 });
 
 //___________________
