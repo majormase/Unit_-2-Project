@@ -1,22 +1,28 @@
+html {
+  background: #fefaf4;
+}
 .container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .container > div {
     display: flex;
     flex-direction: column;
-    width: 40%;
-    height: 50%;
-    padding: 2vw;
+    flex-wrap: wrap;
+    width: 30%;
+    height: 45%;
     text-align: center;
     border: 2px solid #263238;
     justify-content: center;
     margin: 1vw;
     min-width: 5vw;
+    border-radius: 10px;
+
 }
 
 img {
     width: 100%;
     height: 100%;
+    border-radius: 10px 10px 0 0;
 }

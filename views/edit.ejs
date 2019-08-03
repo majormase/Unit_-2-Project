@@ -16,7 +16,9 @@
         <form action="/things/<%=thing.id%>?_method=PUT" method="POST">
 
             <h3>Name:</h3> <input type="text" name="name" value="<%=thing.name%>"/><br/>
-            <h3>Description:</h3> <input type="text" name="description" value="<%=thing.description%>"/><br/>
+            <h3>Blog about it:</h3>
+            <textarea name="description" value="<%=thing.description%>" rows="8" cols="80"></textarea>
+            <!-- <input type="text" name="description" value="<%=thing.description%>"/><br/> -->
             <h3>Image:</h3> <input type="text" name="img" value="<%=thing.img%>"/><br/>
             <h3>Link:</h3> <input type="text" name="link" value="<%=thing.link%>"/><br/>
             <input type="submit" value="Submit Changes"/>

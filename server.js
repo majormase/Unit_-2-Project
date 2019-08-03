@@ -68,9 +68,6 @@ app.get('/things/:id', (req, res)=>{
 
 app.post('/things/', (req, res)=>{
   Thing.create(req.body, (error, createdThing)=>{
-    console.log(createdThing);
-    console.log(req.body);
-    console.log(error);
      res.redirect('/things');
   });
 });
@@ -78,7 +75,6 @@ app.post('/things/', (req, res)=>{
 //INDEX
 app.get('/things', (req, res)=>{
     Thing.find({}, (error, allThing)=>{
-      console.log(allThing);
         res.render('index.ejs', {
             thing: allThing//this must be inside the brackets for it to be called
         });
@@ -112,7 +108,7 @@ app.delete('/things/:id', (req, res)=>{
 
 ///LIKE
 
-app.put('/things/:id/like', (req, res)=>{
+app.put('/things/:id/buy', (req, res)=>{
     Thing.findByIdAndUpdate(req.params.id, req.likes, {new:true}, (err, updatedThing)=>{
         updatedThing.likes += 1;
         updatedThing.save();
