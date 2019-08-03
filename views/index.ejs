@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Index Page</title>
-        <link rel="stylesheet" href="/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=.50">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,500" rel="stylesheet">
+    <title></title>
+</head>
     <body>
         <h6>INDEX</h6>
         <h1>FAVORITE THINGS</h1>
         <div class="container">
-            <%for (let i = 0; i < thing.length; i++) { %>
+            <% for (let i = 0; i < thing.length; i++) { %>
             <div class="<%=thing[i].name%>">
-                <h2><%=thing[i].name%></h2>
-                <a href="/shop/<%=thing[i].id%>">
-                    <img src=<%=thing[i].img%> alt="<%=thing[i].name%>"/>
-                </a>
-                <a href="/show/<%=thing[i].id%>/edit">
+                  <img src="<%=thing[i].img; %>" alt="">
+                  <a href="/things/<%=thing[i].id; %>"><h2><%=thing[i].name%></h2></a>
+                <a href="/things/<%=thing[i].id%>/edit">
                     <button type="button" name="button">EDIT</button>
                 </a>
-                <form action="/things/<%=clothes[i].id;%>?_method=DELETE" method="POST">
+                <form action="/things/<%=thing[i].id;%>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE">
                 </form>
 
@@ -28,7 +26,7 @@
         </div>
         <div class="createButton">
             <a href="/things/new">
-                CREATE BLOG
+                Start a New Blog
             </a>
         </div>
     </body>

@@ -16,12 +16,12 @@
         <div class="text">
           Name: <%=thing.name; %>
          Description: <%=thing.description; %>
-        Price: <%=thing.link; %>
+        Link: <%=thing.link; %>
         Likes: <%=thing.likes; %>
           </div>
             </div>
-            <form action="/things/<%=thing.id%>/buy?_method=PUT" method="POST">
-                <input type="submit" value="LIKE" />
+            <form action="/things/<%=thing.id%>/likes?_method=PUT" method="POST">
+                <input type="submit" value="LIKES" />
             </form>
         <nav>
             <a href="/things">Back to Blog Index</a>

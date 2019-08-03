@@ -68,6 +68,9 @@ app.get('/things/:id', (req, res)=>{
 
 app.post('/things/', (req, res)=>{
   Thing.create(req.body, (error, createdThing)=>{
+    console.log(createdThing);
+    console.log(req.body);
+    console.log(error);
      res.redirect('/things');
   });
 });
@@ -75,6 +78,7 @@ app.post('/things/', (req, res)=>{
 //INDEX
 app.get('/things', (req, res)=>{
     Thing.find({}, (error, allThing)=>{
+      console.log(allThing);
         res.render('index.ejs', {
             thing: allThing//this must be inside the brackets for it to be called
         });
@@ -83,11 +87,11 @@ app.get('/things', (req, res)=>{
 
 //EDIT
 app.get('/things/:id/edit', (req, res)=>{
-    Thing.findById(req.params.id, (err, foundThing)=>{ //find the bean
+    Thing.findById(req.params.id, (err, foundThing)=>{ //find the thing
         res.render(
     		'edit.ejs',
     		{
-    			thing: foundThing //pass in found bean
+    			thing: foundThing //pass in found thing
     		}
     	);
     });
@@ -106,11 +110,11 @@ app.delete('/things/:id', (req, res)=>{
   });
 });
 
-///BUY
+///LIKE
 
 app.put('/things/:id/like', (req, res)=>{
-    Thing.findByIdAndUpdate(req.params.id, req.like, {new:true}, (err, updatedThing)=>{
-        updatedThing.like += 1;
+    Thing.findByIdAndUpdate(req.params.id, req.likes, {new:true}, (err, updatedThing)=>{
+        updatedThing.likes += 1;
         updatedThing.save();
         res.redirect('/things/' + req.params.id);
     });
