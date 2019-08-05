@@ -1,0 +1,42 @@
+html {
+  background: #fefaf4;
+}
+.nav {
+  background: #263238;
+  margin: -21px;
+  height: 80px;
+  color: white;
+  margin-bottom: 40px;
+  font-family: 'Oswald';
+}
+.links {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0 10px 0;
+  font-family: 'Oswald';
+  font-size: 1.2em;
+  color: #fefaf4;
+}
+h1 {
+  font-family: 'Oswald';
+  font-weight: 400;
+  color: #fefaf4;
+  transform: translate(40px, 15px);
+}
+p {
+  padding: 12px;
+  transform: translate(-50px, -75px);
+}
+.log {
+  color: #d8986a;
+  border: 2px solid #d8986a;
+  border-radius: 10px;
+}
+h2 {
+  font-family: 'Oswald';
+  font-weight: 400;
+  color: #263238;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+}

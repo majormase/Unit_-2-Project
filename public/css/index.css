@@ -4,6 +4,7 @@ html {
 .nav {
   background: #263238;
   margin: -21px;
+  height: 80px;
   color: white;
   margin-bottom: 40px;
   font-family: 'Oswald';
@@ -20,11 +21,11 @@ h1 {
   font-family: 'Oswald';
   font-weight: 400;
   color: #fefaf4;
-  transform: translate(40px, 55px);
+  transform: translate(40px, 15px);
 }
 p {
   padding: 12px;
-  transform: translate(-50px, -27px);
+  transform: translate(-50px, -75px);
 }
 .log {
   color: #d8986a;
@@ -66,6 +67,39 @@ h2 {
   font-family: 'Oswald';
   font-weight: 400;
   color: #263238;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+.button {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+  transform: translate(0, -7px);
+}
+button {
+  background: #d8986a;
+  box-shadow: 2px 2px;
+  font-family: 'Oswald';
+  font-size: 1em;
+  color: #4f5b62;
+  border: 0px;
+  transition: 0.2s ease-in-out;
+  border-radius: 10px;
+  color: black;
+
+}
+input[type="submit"] {
+  background: #d8986a;
+  box-shadow: 2px 2px;
+  font-family: 'Oswald';
+  font-size: 1em;
+  color: #4f5b62;
+  border: 0px;
+  transition: 0.2s ease-in-out;
+  border-radius: 10px;
+  color: black;
+  margin-left: 23px;
 }
 
 img {
