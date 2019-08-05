@@ -6,12 +6,21 @@
         <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,500" rel="stylesheet">
         <title></title>
     </head>
+    <header>
+      <div class="nav">
+        <a href="/things"><h1>favorite things</h1></a>
+        <div class="links">
+          <p>about</p>
+          <p>account</p>
+          <p class="log">log out</p>
+        </div>
+      </div>
     <body>
 
       <div class="container">
         <div class="sidebar"></div>
         <div class="registration">
-        <h1>Edit Blog Page</h1>
+        <h2>Edit Blog Page</h2>
 
         <form action="/things/<%=thing.id%>?_method=PUT" method="POST">
 

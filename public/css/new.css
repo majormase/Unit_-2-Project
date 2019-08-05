@@ -1,6 +1,40 @@
 html {
   background: #fefaf4;
 }
+a {
+  text-decoration: none;
+}
+.nav {
+  background: #263238;
+  margin: -21px;
+  height: 90px;
+  color: white;
+  margin-bottom: 40px;
+  font-family: 'Oswald';
+}
+.links {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 0 10px 0;
+  font-family: 'Oswald';
+  font-size: 1.2em;
+  color: #fefaf4;
+}
+h1 {
+  font-family: 'Oswald';
+  font-weight: 400;
+  color: #fefaf4;
+  transform: translate(40px, 15px);
+}
+p {
+  padding: 12px;
+  transform: translate(-50px, -70px);
+}
+.log {
+  color: #d8986a;
+  border: 2px solid #d8986a;
+  border-radius: 10px;
+}
 
 .container {
   width: 80vw;
@@ -30,7 +64,7 @@ html {
   overflow: auto;
 }
 
-h1 {
+h2 {
   font-family: 'Oswald';
   font-weight: 500;
   color: #263238;

@@ -8,7 +8,7 @@
     </head>
     <header>
       <div class="nav">
-        <h1>favorite things</h1>
+        <a href="/things"><h1>favorite things</h1></a>
         <div class="links">
           <p>about</p>
           <p>account</p>
@@ -16,26 +16,22 @@
         </div>
       </div>
     <body>
+      <h2><%=thing.name; %></h2>
       <div class="container">
-        <h2>Blog Show Page</h2>
-      </div>
-      <div class="display">
-        <div class="card">
-        <img src="<%=thing.img; %>" alt="">
+      <div class="sidebar"><img src="<%=thing.img; %>" alt=""></div>
         <div class="text">
-          Name: <%=thing.name; %>
-         Description: <%=thing.description; %>
-      <a href="<%=thing.link; %>">click here for more</a>
+         <h3><%=thing.description; %></h3>
+         <a href="<%=thing.link; %>"><h3>click here for more</h3></a>
+      <form action="/things/<%=thing.id%>/buy?_method=PUT" method="POST">
+          <input type="submit" value="LOVE" />
+      </form>
+      <%=thing.likes; %>
           </div>
             </div>
-            <form action="/things/<%=thing.id%>/buy?_method=PUT" method="POST">
-                <input type="submit" value="LOVE" />
-            </form>
-            <%=thing.likes; %>
         <nav>
-            <a href="/things">Back to Home Page</a>
+            <a href="/things"><h3>Back to Home Page</h3></a>
         </nav>
       </div>
-
+</div>
     </body>
 </html>
