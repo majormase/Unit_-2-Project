@@ -6,28 +6,38 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,500" rel="stylesheet">
     <title></title>
 </head>
+<header>
+  <div class="nav">
+    <h1>favorite things</h1>
+    <div class="links">
+      <p>about</p>
+      <p>account</p>
+      <p class="log">log out</p>
+    </div>
+  </div>
+</header>
     <body>
-        <h6>INDEX</h6>
-        <h1>FAVORITE THINGS</h1>
+      <div class="createButton">
+          <a href="/things/new">
+              Start a New Blog
+          </a>
+      </div>
         <div class="container">
             <% for (let i = 0; i < thing.length; i++) { %>
             <div class="<%=thing[i].name%>">
                   <img src="<%=thing[i].img; %>" alt="">
                   <a href="/things/<%=thing[i].id; %>"><h2><%=thing[i].name%></h2></a>
+                  <div class="button">
                 <a href="/things/<%=thing[i].id%>/edit">
                     <button type="button" name="button">EDIT</button>
                 </a>
                 <form action="/things/<%=thing[i].id;%>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE">
                 </form>
-
+                </div>
             </div>
             <% } %>
         </div>
-        <div class="createButton">
-            <a href="/things/new">
-                Start a New Blog
-            </a>
-        </div>
+
     </body>
 </html>
