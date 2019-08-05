@@ -108,13 +108,13 @@ app.delete('/things/:id', (req, res)=>{
 
 ///LIKE
 
-// app.put('/things/:id/buy', (req, res)=>{
-//     Thing.findByIdAndUpdate(req.params.id, req.likes, {new:true}, (err, updatedThing)=>{
-//         updatedThing.likes += 1;
-//         updatedThing.save();
-//         res.redirect('/things/' + req.params.id);
-//     });
-// });
+app.put('/things/:id/buy', (req, res)=>{
+    Thing.findByIdAndUpdate(req.params.id, req.likes, {new:true}, (err, updatedThing)=>{
+        updatedThing.likes += 1;
+        updatedThing.save();
+        res.redirect('/things/' + req.params.id);
+    });
+});
 
 //___________________
 //Listener
