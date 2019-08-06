@@ -25,7 +25,8 @@
         <div class="container">
             <% for (let i = 0; i < thing.length; i++) { %>
             <div class="<%=thing[i].name%>">
-                  <img src="<%=thing[i].img; %>" alt="">
+                <a href="/things/<%=thing[i].id; %>"><img src="<%=thing[i].img; %>" alt=""></a>
+
                   <a href="/things/<%=thing[i].id; %>"><h2><%=thing[i].name%></h2></a>
                   <div class="button">
                 <a href="/things/<%=thing[i].id%>/edit">
